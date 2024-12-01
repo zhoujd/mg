@@ -78,7 +78,7 @@ main(int argc, char **argv)
 	char		*batchfile = NULL;
 	PF		 init_fcn = NULL;
 	int	 	 o, i, nfiles;
-	int	  	 nobackups = 0;
+	int	  	 nobackups = 1;
 	struct buffer	*bp = NULL;
 
 #if defined(__OpenBSD__)
@@ -97,7 +97,7 @@ main(int argc, char **argv)
 			allbro = 1;
 			break;
 		case 'n':
-			nobackups = 1;
+			nobackups = 0;
 			break;
 		case 'f':
 			if (init_fcn_name != NULL)

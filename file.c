@@ -639,7 +639,7 @@ makebkfile(int f, int n)
 		makebackup = n > 0;
 	else
 		makebackup = !makebackup;
-	ewprintf("Backup files %sabled", makebackup ? "en" : "dis");
+	//ewprintf("Backup files %sabled", makebackup ? "en" : "dis");
 	return (TRUE);
 }
 
