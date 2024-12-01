@@ -63,7 +63,7 @@ extern void     closetags(void);
 static __dead void
 usage(void)
 {
-	fprintf(stderr, "usage: %s [-BR] [-b file] [-f mode] [-u file] "
+	fprintf(stderr, "usage: %s [-hBR] [-b file] [-f mode] [-u file] "
 	    "[+number] [file ...]\n",
 	    __progname);
 	exit(1);
@@ -87,7 +87,7 @@ main(int argc, char **argv)
 		err(1, "pledge");
 #endif
 
-	while ((o = getopt(argc, argv, "BRb:f:u:")) != -1)
+	while ((o = getopt(argc, argv, "hBRb:f:u:")) != -1)
 		switch (o) {
 		case 'b':
 			batch = 1;
@@ -108,6 +108,7 @@ main(int argc, char **argv)
 		case 'u':
 			conffile = optarg;
 			break;
+		case 'h':
 		default:
 			usage();
 		}
